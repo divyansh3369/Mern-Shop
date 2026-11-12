@@ -1,178 +1,142 @@
-## MERN Ecommerce: A Seamless Shopping Experience Powered by the MERN Stack, Redux Toolkit, and Material UI
+# Mern Shop — Full-Stack E-Commerce Application
 
-### Also try -> [https://mernchat.in](https://mernchat.in)
-### ```Note✨: I have another amazing project on``` [end-to-end-encrypted-chat-application](https://github.com/RishiBakshii/mern-chat) ```using Next.js, Prisma, Postgresql, Express, Socket.io.```
+A full-stack e-commerce web application built with React, Redux Toolkit, Material UI, Node.js, Express, and MongoDB.
 
-**MERN Ecommerce** is a full-stack application designed to transform your online shopping experience. Built with the MERN stack (MongoDB, Express.js, React, Node.js), it leverages Redux Toolkit for efficient state management and Material UI for a sleek, user-friendly interface. This project offers a robust platform for both users and admins, packed with essential features for a seamless experience.
+The project provides a foundation for exploring common e-commerce workflows, frontend state management, REST API integration, authentication, and database operations.
 
-![ecommerce-homepage](https://github.com/RishiBakshii/mern-ecommerce/blob/main/frontend/src/assets/images/front.png?raw=true)
-<!-- ![ecommerce-banner](https://github.com/RishiBakshii/mern-ecommerce/blob/main/frontend/src/assets/images/banner4.jpg?raw=true) -->
-![ecommerce-banner](https://github.com/RishiBakshii/mern-ecommerce/blob/main/frontend/src/assets/images/banner3.jpg?raw=true)
+## Tech Stack
 
+**Frontend**
+- React 18
+- React Router
+- Redux Toolkit and React Redux
+- Material UI (MUI)
+- Axios
+- React Hook Form
+- React Toastify
 
-# **Features**
+**Backend**
+- Node.js
+- Express.js
+- MongoDB and Mongoose
+- JSON Web Tokens (JWT)
+- bcryptjs
+- Cookie Parser
+- Nodemailer
 
-### **User:**
-- **Product Reviews:**
-  - Write, edit, and delete reviews.
-  - Instant updates on ratings and star percentages.
-  
-- **Wishlist:**
-  - Add, remove, and annotate products with personalized notes.
-  
-- **Order Management:**
-  - Create new orders and view order history.
-  
-- **Profile Management:**
-  - Manage email, username, and multiple addresses.
-  
-- **Shopping Cart:**
-  - Add products, adjust quantities, and view subtotals.
+## Project Structure
 
-### **Admin:**
-- **Product Management:**
-  - Add, edit, delete, and soft-delete products.
-  - Manage product attributes like name and stock.
-  
-- **Order Management:**
-  - View and update order details and status.
+```text
+Mern-Shop/
+├── frontend/       # React client application
+├── backend/        # Express API and database logic
+├── LICENSE
+└── README.md
+```
 
-### **Security & User Experience:**
-- **Secure Authentication:**
-  - Login, signup, OTP verification, password reset, and logout.
-
-- **Intuitive Interface:**
-  - Powered by Material UI for a visually appealing and user-friendly experience.
-
-### **Scalability:**
-- **Built for Growth:**
-  - Scalable architecture to handle increasing user demands.
-
-
-# **Project Setup**
+## Getting Started
 
 ### Prerequisites
-- Node.js ( version v21.1.0 or later )
-- MongoDB installed and running locally
 
-### Clone the project
+- Node.js and npm
+- MongoDB connection
+- Git
 
-```bash
-  git clone https://github.com/RishiBakshii/mern-ecommerce.git
-```
-
-### Navigate to the project directory
+### 1. Clone the repository
 
 ```bash
-  cd mern-ecommerce
+git clone https://github.com/divyansh3369/Mern-Shop.git
+cd Mern-Shop
 ```
 
-### Install dependencies for frontend and backend separately
-**Tip:** To efficiently install dependencies for both frontend and backend simultaneously, use split terminals.
-
-Install frontend dependencies
-```bash
-cd frontend
-npm install
-```
-
-Install backend dependencies
+### 2. Configure the backend
 
 ```bash
 cd backend
 npm install
 ```
 
+Create a `.env` file in the `backend` directory. Add the environment variables required by the backend configuration, using the names expected by the source code.
 
-### Environment Variables
-**Backend**
-- Create a `.env` file in the `backend` directory.
-- Add the following variables with appropriate values
-```bash
-# Database connection string
-MONGO_URI="mongodb://localhost:27017/your-database-name"
+Typical configuration values may include:
 
-# Frontend URL (adjust if needed)
-ORIGIN="http://localhost:3000"
-
-# Email credentials for sending password resets and OTPs
-EMAIL="your-email@example.com"
-PASSWORD="your-email-password"
-
-# Token and cookie expiration settings
-LOGIN_TOKEN_EXPIRATION="30d"  # Days
-OTP_EXPIRATION_TIME="120000"  # Milliseconds
-PASSWORD_RESET_TOKEN_EXPIRATION="2m"  # Minutes
-COOKIE_EXPIRATION_DAYS="30"    # Days
-
-# Secret key for jwt security
-SECRET_KEY="your-secret-key"
-
-# Environment (production/development)
-PRODUCTION="false" # Initially set to false for development
+```env
+MONGO_URI=your_mongodb_connection_string
+ORIGIN=http://localhost:3000
+SECRET_KEY=your_secret_key
+PRODUCTION=false
 ```
 
-**Frontend**
-- Create a `.env` file in the `frontend` directory
-- Add the following variable:
+If email functionality is enabled, configure the required email variables as well. Never commit credentials, API keys, or real secrets.
+
+Start the backend:
+
 ```bash
-# Backend URL (adjust if needed)
-REACT_APP_BASE_URL="http://localhost:8000" 
+npm start
 ```
 
-**Important**
-- Replace all placeholders (e.g., your_database_name, your_email) with your actual values.
-- Exclude the `.env` file from version control to protect sensitive information.
+### 3. Configure the frontend
 
-### Data seeding
-- **Get started quickly with pre-populated data**: Populate your database with sample users, products, reviews, and carts, enabling you to test functionalities without manual data entry.
+Open a second terminal:
 
-**Steps**:
-- Open a new terminal window.
-- Navigate to the `backend` directory: `cd backend`
-- Run the seeding script: `npm run seed` ( This script executes the `seed.js` file within the `seed` subdirectory equivalent to running `node seed/seed.js` )
-### Running Development Servers
-
-**Important:**
-
-- **Separate terminals**: Run the commands in separate terminal windows or use `split terminal` to avoid conflicts.
-- **Nodemon required**: Ensure you have `nodemon` installed globally to run the backend development servers using `npm run dev`. You can install it globally using `npm install -g nodemon`.
-
-#### Start the backend server
-- Navigate to the `backend` directory: `cd backend`
-- Start the server: `npm run dev` (or npm start)
-- You should see a message indicating the server is running, usually on port 8000.
-     
-#### Start the frontend server:
-- Navigate to the `frontend` directory: `cd frontend`
-- Start the server: `npm start`
-- You should see a message indicating the server is running, usually on port 3000.
-
-### Login with demo account (Optional)
-- After successfully seeding the database, you can now explore the application's functionalities using pre-populated sample data.
-- here are the `login credentials`
 ```bash
-  email: demo@gmail.com
-  pass: helloWorld@123
+cd frontend
+npm install --legacy-peer-deps
 ```
 
-- **Please Note**: While the demo account provides a convenient way to explore many features, it has some limitations:
-    - **Password Reset and OTP Verification**: Due to security reasons, the demo account uses a non-real email address. Therefore, password reset and OTP verification functionalities are not available for this account.
+Create a `.env` file in the `frontend` directory and set the API base URL expected by the application. For example, if the backend runs on port 8000:
 
-    **What this means**:
-    - You cannot request a password reset or receive verification codes on the demo email address.
-    - To test password reset and OTP verification flows, you need to create a genuine account with a valid email address.
+```env
+REACT_APP_BASE_URL=http://localhost:8000
+```
 
-    **What to do?**
-    - If you're primarily interested in exploring other functionalities like wishlist, cart, and order history, the demo account is sufficient.
-    - To test password reset and OTP verification, create a personal account with a valid email address.
-### Accessing the Application
-Once both servers are running, you can access them at the following URL's:
-- Backend: http://localhost:8000
-- Frontend: http://localhost:3000
+Start the React development server:
 
-## **Bonus**
-Don't forget to star the repository and share your feedback!✨
+```bash
+npm start
+```
 
-## Authors
-- [@RishiBakshii](https://github.com/RishiBakshii)
+Open `http://localhost:3000` in your browser.
+
+**Note:** Environment variable names, API paths, database settings, and email configuration must match the implementation in the source code. The commands above assume the backend runs on port 8000.
+
+## Development
+
+Build the frontend for production:
+
+```bash
+cd frontend
+npm run build
+```
+
+Run frontend tests:
+
+```bash
+cd frontend
+npm test
+```
+
+## Security Notes
+
+- Keep `.env` files and credentials out of version control.
+- Use strong, unique secrets outside local development.
+- Do not publish private database connection strings or email credentials.
+- Review authentication, authorization, and input validation before deploying.
+
+## Future Improvements
+
+- Improve automated test coverage.
+- Add clearer loading, empty, and error states.
+- Strengthen input validation and API error handling.
+- Improve responsive design and accessibility.
+- Document API endpoints and deployment steps.
+
+## License
+
+This repository includes the MIT License. See the [LICENSE](LICENSE) file for its terms and required notices.
+
+## Maintainer
+
+**Divyansh Dev Mishra**
+
+GitHub: [@divyansh3369](https://github.com/divyansh3369)
