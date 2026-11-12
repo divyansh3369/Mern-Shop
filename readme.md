@@ -1,15 +1,16 @@
 # Mern Shop — Full-Stack E-Commerce Application
 
-A full-stack e-commerce application built with React, Redux Toolkit, Material UI, Node.js, Express.js, and MongoDB.
+A full-stack e-commerce web application built using React, Redux Toolkit, Material UI, Node.js, Express.js, and MongoDB.
 
-The application provides a foundation for exploring e-commerce workflows, frontend state management, REST API integration, authentication, and database operations.
+This project provides a foundation for exploring e-commerce workflows, frontend state management, REST API integration, authentication, and database operations.
 
 ## Tech Stack
 
 ### Frontend
 - React
 - React Router
-- Redux Toolkit and React Redux
+- Redux Toolkit
+- React Redux
 - Material UI (MUI)
 - Axios
 - React Hook Form
@@ -18,7 +19,8 @@ The application provides a foundation for exploring e-commerce workflows, fronte
 ### Backend
 - Node.js
 - Express.js
-- MongoDB and Mongoose
+- MongoDB
+- Mongoose
 - JSON Web Tokens (JWT)
 - bcryptjs
 - Cookie Parser
@@ -28,10 +30,12 @@ The application provides a foundation for exploring e-commerce workflows, fronte
 
 - Product listing and browsing
 - Product search by title or description
+- Case-insensitive product search
 - Brand and category filtering
 - Product sorting and pagination
 - REST API integration
-- Authentication and database operations
+- Database operations
+- Authentication support
 
 ## Project Structure
 
@@ -58,14 +62,14 @@ git clone https://github.com/divyansh3369/Mern-Shop.git
 cd Mern-Shop
 ```
 
-### 2. Configure the Backend
+### 2. Set Up the Backend
 
 ```bash
 cd backend
 npm install
 ```
 
-Create a `.env` file in the `backend` directory and configure the environment variables required by the application.
+Create a `.env` file inside the `backend` directory. Configure the environment variables required by the source code.
 
 Example configuration:
 
@@ -76,15 +80,15 @@ SECRET_KEY=your_secret_key
 PRODUCTION=false
 ```
 
-Configure email-related variables if required by the application. Never commit real credentials or secrets.
+Use the exact variable names expected by the backend. Configure email-related variables if required. Never commit real credentials or secrets.
 
-Start the backend using the command configured in `backend/package.json`, for example:
+Start the backend using the command defined in `backend/package.json`. For example:
 
 ```bash
 npm start
 ```
 
-### 3. Configure the Frontend
+### 3. Set Up the Frontend
 
 Open a second terminal:
 
@@ -93,13 +97,15 @@ cd frontend
 npm install --legacy-peer-deps
 ```
 
-Create a `.env` file in the `frontend` directory and set the API base URL expected by the application. For example:
+Create a `.env` file inside the `frontend` directory and configure the API base URL expected by the application.
+
+Example:
 
 ```env
 REACT_APP_BASE_URL=http://localhost:8000
 ```
 
-Start the frontend:
+Start the frontend using the script configured in `frontend/package.json`:
 
 ```bash
 npm start
@@ -107,32 +113,35 @@ npm start
 
 Open the local URL displayed by the development server.
 
-**Note:** Environment variable names, API paths, database settings, and ports must match the actual source-code configuration.
+**Note:** Environment variable names, API paths, and port numbers must match the actual project configuration.
 
 ## My Contributions
 
 The following enhancements have been made to the project:
 
-- Added product search by title and description.
-- Extended the backend product API to support case-insensitive search.
+- Implemented product search by title and description.
+- Extended the backend product API to support case-insensitive searching.
 - Integrated search parameters with existing brand and category filters.
-- Connected the frontend product listing to the updated search API.
+- Updated the frontend product API to pass search parameters to the backend.
+- Integrated search functionality into the product listing interface.
 
 ## Development
 
-Build the frontend for production:
+### Production Build
 
 ```bash
 cd frontend
 npm run build
 ```
 
-Run frontend tests if configured:
+### Run Tests
 
 ```bash
 cd frontend
 npm test
 ```
+
+These commands depend on the scripts configured in the frontend `package.json`.
 
 ## Security Notes
 
@@ -151,7 +160,7 @@ npm test
 
 ## License
 
-This project includes the MIT License. See the [LICENSE](LICENSE) file for the applicable terms and required copyright notices.
+This project includes the MIT License. Refer to the [LICENSE](LICENSE) file for the applicable terms and required copyright notices.
 
 ## Maintainer
 
